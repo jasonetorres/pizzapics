@@ -1,3 +1,4 @@
+import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { SignupValidation } from "@/lib/validation";
-import { z } from "zod";
 import Loader from "@/components/ui/shared/Loader";
 import { createUserAccount } from "@/lib/appwrite/api";
 

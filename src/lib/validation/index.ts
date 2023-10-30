@@ -1,4 +1,4 @@
-import * as z from "zod"
+import * as z from "zod";
 
 export const SignupValidation = z.object({
     name: z.string().min(2, { message: 'nah too short' }),
