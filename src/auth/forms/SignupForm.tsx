@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -14,10 +14,19 @@ import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { SignupValidation } from "@/lib/validation";
 import Loader from "@/components/ui/shared/Loader";
-import { createUserAccount } from "@/lib/appwrite/api";
+import { useToast } from "@/components/ui/use-toast"
+import { useCreateUserAccountMutation, useSignInAccount } from "@/lib/react-query/queriesAndMutations";
+import { useUserContext } from "@/context/AuthContext";
+
 
 const SignupForm = () => {
-  const isLoading = false;
+  const { toast } = useToast()
+  const { checkAuthUser, isLoading, isUserLoading } = useUserContext;
+  const navigate = useNavigate;
+
+  const { mutateAsync: createUserAccount, isLoading: isCreatingUser } = useCreateUserAccountMutation();
+
+  const { mutateAsync: signInAccount, isLoading: isSigningIn } = useSignInAccount();
 
   const form = useForm<z.infer<typeof SignupValidation>>({
     resolver: zodResolver(SignupValidation),
@@ -31,7 +40,23 @@ const SignupForm = () => {
 
   async function onSubmit(values: z.infer<typeof SignupValidation>) {
     const newUser = await createUserAccount(values);
-    console.log(newUser);
+    if(!newUser){
+      return toast({ title: 'it was you not us, try again'})
+    }
+    const session = await signInAccount({
+      email: values.email,
+      password: values.password,
+    })
+    if(!session){
+      return toast({ title: 'FAAAAIL, try again'})
+    }
+    const isLoggedIn = await checkAuthUser();
+    if(isLoggedIn) {
+      form.reset();
+      navigate()
+    } else {
+      return toast({ title: 'FAAAAIL try again'})
+    }
   }
 
   return (
@@ -99,7 +124,7 @@ const SignupForm = () => {
             )}
           />
           <Button type="submit" className="shad-button_primary">
-            {isLoading ? (
+            {isCreatingUser ? (
               <div className="flex-center gap-2">
                 <Loader />
                 Preheating the Oven...
