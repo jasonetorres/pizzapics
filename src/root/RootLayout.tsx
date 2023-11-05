@@ -16,7 +16,7 @@ const RootLayout = () => {
 
       <Bottombar />
     </div>
-  )
-}
+  );
+};
 
-export default RootLayout
+export default RootLayout;
