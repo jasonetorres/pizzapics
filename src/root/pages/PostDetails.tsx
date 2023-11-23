@@ -1,8 +1,9 @@
 import { Button } from '@/components/ui/button';
+import PostStats from '@/components/ui/shared/PostStats';
 import { useUserContext } from '@/context/AuthContext';
 import { useDeletePost, useGetPostById, useGetUserPosts } from '@/lib/react-query/queriesAndMutations'
 import { multiFormatDateString } from '@/lib/utils';
-import { Ghost, Loader } from 'lucide-react';
+import  Loader  from '@/components/ui/shared/Loader';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
 const PostDetails = () => {
@@ -101,11 +102,37 @@ const PostDetails = () => {
       <hr className='border w-full border-dark-4/80' />
 
       <div className='flex flex-col flex-1 w-full small-medium lg:base-regular'>
-
+        <p>{post?.caption}</p>
+        <ul className='flex gap-1 mt-2'>
+          {post?.tags.map((tag: string, index: string) => (
+            <li
+              key={`${tag}${index}`}
+              className='text-light-3 small-regular'>
+                #{tag}
+              </li>
+          ))}
+        </ul>
       </div>
-        </div>
-
-        </div>
-      )}
+      <div className='w-full'>
+        <PostStats post={post} userId={user.id} />
+      </div>
     </div>
-  )
+  </div>
+)}
+  <div className='w-full max-w-5xl'>
+    <hr className='border w-full border-dark-4/80'/>
+    <h3 className='body-bold md:h3-bold w-full my-10'>
+      more stuff to check out
+    </h3>
+  {isUserPostLoading || !relatedPosts ? (
+    <Loader />
+  ) : (
+    <GridPostList posts={relatedPosts} />
+  )}
+  </div>
+</div>
+  );
+};
+
+
+export default PostDetails;
