@@ -5,6 +5,7 @@ import { useDeletePost, useGetPostById, useGetUserPosts } from '@/lib/react-quer
 import { multiFormatDateString } from '@/lib/utils';
 import  Loader  from '@/components/ui/shared/Loader';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import GridPostList from '@/components/ui/shared/GridPostList';
 
 const PostDetails = () => {
   const navigate = useNavigate();
