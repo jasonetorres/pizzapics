@@ -3,7 +3,7 @@ import PostCard from "@/components/ui/shared/PostCard";
 import { useGetRecentPosts } from "@/lib/react-query/queriesAndMutations";
 import { Models } from "appwrite";
 const Home = () => {
- const { data: posts, isPending: isPostLoading, isError: isErrorPosts } = useGetRecentPosts();
+  const { data: posts, isPending: isPostLoading, isError: isErrorPosts } = useGetRecentPosts();
 
   return (
     <div className="flex flex-1">
@@ -17,7 +17,7 @@ const Home = () => {
           ) : (
             <ul className="flex flex-col flex-1 gap-9 w-full">
               {posts?.documents.map((post: Models.Document) => (
-                <PostCard post= {post} />
+                <PostCard post={post} />
               ))}
             </ul>
           )}
