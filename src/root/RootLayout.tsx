@@ -8,12 +8,11 @@ const RootLayout = () => {
   return (
     <div className="w-full md:block justify-center">
       <Topbar />
-        <div className="flex">
-        <LeftSidebar />
+      <LeftSidebar />
+
       <section className="flex flex-1 h-full">
-          <Outlet />
-        </section>
-      </div>
+        <Outlet />
+      </section>
 
       <Bottombar />
     </div>
