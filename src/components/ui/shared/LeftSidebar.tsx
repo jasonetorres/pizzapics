@@ -27,7 +27,7 @@ const LeftSidebar = () => {
     <nav className="leftsidebar hidden md:block">
       <div className="flex flex-col gap-11">
         <Link to="/" className="flex gap-3 items-center">
-          <img className="w-14 rounded-full " src="/assets/images/slice.jpg" />
+          <img className="w-16 rounded-half " src="/assets/images/logopizza.JPG" />
         </Link>
 
         {isLoading || !user.email ? (
