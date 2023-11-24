@@ -6,7 +6,7 @@ const Bottombar = () => {
   const { pathname } = useLocation();
 
   return (
-    <section className="bottom-bar">
+    <section className="bottom-bar fixed flex w-full justify-around items-center h-20 bottom-0 md:hidden border-t">
       {bottombarLinks.map((link) => {
         const isActive = pathname === link.route;
         return (
@@ -15,7 +15,7 @@ const Bottombar = () => {
             to={link.route}
             className={`${
               isActive && "rounded-[10px] bg-primary-500 "
-            } flex-center flex-col gap-1 p-2 transition`}>
+            } flex flex-col items-center gap-1 p-2 transition`}>
             <img
               src={link.imgURL}
               alt={link.label}
