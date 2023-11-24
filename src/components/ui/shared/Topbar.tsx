@@ -14,10 +14,10 @@ const Topbar = () => {
   }, [isSuccess]);
 
   return (
-    <section className="topbar">
-      <div className="flex-between py-4 px-5">
+    <section className="topbar md:hidden">
+      <div className="flex justify-between items-center py-4 px-5">
         <Link to="/" className="flex gap-3 items-center">
-        <img className="w-14 rounded-full " src="/assets/images/slice.jpg" />
+          <img className="w-14 rounded-full " src="/assets/images/slice.jpg" />
         </Link>
 
         <div className="flex gap-4">
