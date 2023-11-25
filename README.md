@@ -24,14 +24,23 @@ Ready to dive into the pizza-filled world of PizzaPix? Follow these steps to set
 
 ## Clone the Repository
 
+```
 git clone https://github.com/yourusername/pizzapix.git
+```
+
 ## Install Dependencies
 
+```
 cd pizzapix
 npm install
+```
+
 ## Start the Development Server
 
+```
 npm run dev
+```
+
 Visit http://localhost:3000 to explore PizzaPix in action!
 
 ## Contributing
@@ -43,11 +52,20 @@ If you encounter issues or have feature requests, please use our issue template.
 ## Pull Requests
 Fork the repository and create a new branch for your feature or bug fix:
 
+```
 git checkout -b feature-name
+```
+
 Make your changes and commit them:
 
+```
 git commit -m "Description of changes"
+```
+
 Push your changes to your fork:
 
+```
 git push origin feature-name
+```
+
 Open a pull request to the main branch of the original repository.
