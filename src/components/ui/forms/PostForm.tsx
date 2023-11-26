@@ -1,4 +1,4 @@
-import { Form, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useToast } from "../use-toast";
 import { Models } from "appwrite";
 import { useForm } from "react-hook-form";
@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { PostValidation } from "@/lib/validation";
 import { z } from "zod";
 import { useCreatePost, useUpdatePost } from "@/lib/react-query/queriesAndMutations";
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "../form";
+import { FormControl, FormField, FormItem, FormLabel, FormMessage, Form } from "../form";
 import { Loader } from "lucide-react";
 import { Button } from "../button";
 import { Input } from "../input";
