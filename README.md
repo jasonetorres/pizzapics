@@ -47,24 +47,24 @@ Visit http://localhost:3000 to explore PizzaPix in action!
 PizzaPix welcomes your contributions to make our pizza-loving community even more vibrant! Follow these guidelines to ensure a smooth collaboration:
 
 ## Issue Template
-If you encounter issues or have feature requests, please use our issue template.
+If you encounter issues or have feature requests, please use our [issue template](https://github.com/jasonetorres/pizzapics/issues/new).
 
 ## Pull Requests
 Fork the repository and create a new branch for your feature or bug fix:
 
-```
+```bash
 git checkout -b feature-name
 ```
 
-Make your changes and commit them:
+Make your changes, stage them and then commit:
 
-```
+```bash
 git commit -m "Description of changes"
 ```
 
 Push your changes to your fork:
 
-```
+```bash
 git push origin feature-name
 ```
 
