@@ -24,20 +24,20 @@ Ready to dive into the pizza-filled world of PizzaPix? Follow these steps to set
 
 ## Clone the Repository
 
-```
+```bash
 git clone https://github.com/yourusername/pizzapix.git
 ```
 
 ## Install Dependencies
 
-```
+```bash
 cd pizzapix
 npm install
 ```
 
 ## Start the Development Server
 
-```
+```bash
 npm run dev
 ```
 
@@ -58,7 +58,7 @@ git checkout -b feature-name
 
 Make your changes and stage them.
 
-```
+```bash
 git add <filename>
 ``` 
 
@@ -75,3 +75,7 @@ git push origin feature-name
 ```
 
 Open a pull request to the main branch of the [original repository](https://github.com/jasonetorres/pizzapics)https://github.com/jasonetorres/pizzapics.
+
+## Support
+
+This project needs a ⭐️ from you. Don't forget to leave a star ⭐️.
