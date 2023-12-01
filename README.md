@@ -68,4 +68,4 @@ Push your changes to your fork:
 git push origin feature-name
 ```
 
-Open a pull request to the main branch of the original repository.
+Open a pull request to the main branch of the [original repository](https://github.com/jasonetorres/pizzapics)https://github.com/jasonetorres/pizzapics.
