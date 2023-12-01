@@ -1,6 +1,6 @@
 tasks:
   - name: Server 
-    init: npm ci && npm run build
+    init: npm ci
     command: npm run dev
 
 ports:
