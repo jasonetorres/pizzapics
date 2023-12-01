@@ -56,7 +56,13 @@ Fork the repository and create a new branch for your feature or bug fix:
 git checkout -b feature-name
 ```
 
-Make your changes, stage them and then commit:
+Make your changes and stage them.
+
+```
+git add <filename>
+``` 
+
+After you stage all the changes, commit those changes.
 
 ```bash
 git commit -m "Description of changes"
