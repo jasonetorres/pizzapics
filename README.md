@@ -22,26 +22,34 @@ Backing PizzaPix is Appwrite, an open-source backend server simplifying web and 
 ## Getting Started
 Ready to dive into the pizza-filled world of PizzaPix? Follow these steps to set up your development environment:
 
-## Clone the Repository
+## Development
+
+> ### Local Development
+
+#### Clone the Repository
 
 ```
 git clone https://github.com/yourusername/pizzapix.git
 ```
 
-## Install Dependencies
+#### Install Dependencies
 
 ```
 cd pizzapix
 npm install
 ```
 
-## Start the Development Server
+#### Start the Development Server
 
 ```
 npm run dev
 ```
 
 Visit http://localhost:3000 to explore PizzaPix in action!
+
+> ### GitPod
+
+[![Open BioDrop in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/jasonetorres/pizzapics)
 
 ## Contributing
 PizzaPix welcomes your contributions to make our pizza-loving community even more vibrant! Follow these guidelines to ensure a smooth collaboration:
