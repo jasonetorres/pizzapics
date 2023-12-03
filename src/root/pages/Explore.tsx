@@ -22,7 +22,6 @@ const SearchResults = ({ isSearchFetching, searchedPosts }: SearchResultProps) =
     );
   }
 };
-
 const Explore = () => {
   const { ref, inView } = useInView();
   const { data: posts, fetchNextPage, hasNextPage } = useGetPosts();
