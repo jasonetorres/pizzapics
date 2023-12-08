@@ -5,6 +5,13 @@ import { Models } from "appwrite";
 const Home = () => {
   const { data: posts, isPending: isPostLoading, isError: isErrorPosts } = useGetRecentPosts();
 
+  if (isErrorPosts){
+    return (
+      <div className="flex flex-1 justify-center items-center">
+        <p className="text-red-500">Error fetching recent posts.</p>
+      </div>
+    );
+  }
   return (
     <div className="flex flex-1">
       <div className="home-container">

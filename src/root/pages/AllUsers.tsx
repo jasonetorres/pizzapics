@@ -1,10 +1,11 @@
 import { useToast } from '@/components/ui'
 import Loader from '@/components/ui/shared/Loader';
 import { useGetUsers } from '@/lib/react-query/queriesAndMutations';
+import UserCard from '@/components/ui/shared/UserCard';
 
 const AllUsers = () => {
   const { toast } = useToast();
-  const { data: creators, isPending, isError, isErrorCreators } = useGetUsers()
+  const { data: creators, isPending, isError:isErrorCreators } = useGetUsers()
 
   if(isErrorCreators) {
     toast({ title: "Ah something messed up."});

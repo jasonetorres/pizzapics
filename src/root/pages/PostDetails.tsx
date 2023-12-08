@@ -16,8 +16,7 @@ const PostDetails = () => {
   const { data: userPosts, isPending: isUserPostLoading } = useGetUserPosts( post?.creator.$id);
   const { mutate: deletePost } = useDeletePost();
   const relatedPosts = userPosts?.documents.filter((userPost) => userPost.$id !== id);
-  const handleDeletePost = userPosts?.documents.filter((userPost) => userPost.$id !== id);
-
+  const handleDeletePost = () => { deletePost({ postId: id, imageId: post?.imageId }); navigate(-1);};
 
   return (
     <div className='post_details-container'>
