@@ -82,7 +82,6 @@ export async function getAccount() {
 
 // ============================== GET USER
 export async function getCurrentUser() {
-  console.log(appwriteConfig.userCollectionId);
   try {
     const currentAccount = await getAccount();
 
@@ -93,7 +92,6 @@ export async function getCurrentUser() {
       appwriteConfig.userCollectionId,
       [Query.equal("accountID", currentAccount.$id)]
     );
-    
 
     if (!currentUser) throw Error;
 
