@@ -28,20 +28,20 @@ Ready to dive into the pizza-filled world of PizzaPix? Follow these steps to set
 
 #### Clone the Repository
 
-```
+```bash
 git clone https://github.com/yourusername/pizzapix.git
 ```
 
 #### Install Dependencies
 
-```
+```bash
 cd pizzapix
 npm install
 ```
 
 #### Start the Development Server
 
-```
+```bash
 npm run dev
 ```
 
@@ -55,25 +55,35 @@ Visit http://localhost:3000 to explore PizzaPix in action!
 PizzaPix welcomes your contributions to make our pizza-loving community even more vibrant! Follow these guidelines to ensure a smooth collaboration:
 
 ## Issue Template
-If you encounter issues or have feature requests, please use our issue template.
+If you encounter issues or have feature requests, please use our [issue template](https://github.com/jasonetorres/pizzapics/issues/new).
 
 ## Pull Requests
 Fork the repository and create a new branch for your feature or bug fix:
 
-```
+```bash
 git checkout -b feature-name
 ```
 
-Make your changes and commit them:
+Make your changes and stage them.
 
-```
+```bash
+git add <filename>
+``` 
+
+After you stage all the changes, commit those changes.
+
+```bash
 git commit -m "Description of changes"
 ```
 
 Push your changes to your fork:
 
-```
+```bash
 git push origin feature-name
 ```
 
-Open a pull request to the main branch of the original repository.
+Open a pull request to the main branch of the [original repository](https://github.com/jasonetorres/pizzapics)https://github.com/jasonetorres/pizzapics.
+
+## Support
+
+This project needs a ⭐️ from you. Don't forget to leave a star ⭐️.
