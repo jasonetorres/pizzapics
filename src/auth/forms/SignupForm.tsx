@@ -20,12 +20,9 @@ import { useUserContext } from "@/context/AuthContext";
 
 
 const SignupForm = () => {
-  const { toast } = useToast()
+  const { toast } = useToast();
   const navigate = useNavigate;
   const { checkAuthUser } = useUserContext();
-
-  const { mutateAsync: createUserAccount, isPending: isCreatingAccount } = useCreateUserAccount();
-  const { mutateAsync: signInAccount } = useSignInAccount();
 
   const form = useForm<z.infer<typeof SignupValidation>>({
     resolver: zodResolver(SignupValidation),
@@ -36,6 +33,12 @@ const SignupForm = () => {
       password: "",
     },
   });
+
+
+  const { mutateAsync: createUserAccount, isPending: isCreatingAccount } = useCreateUserAccount();
+  const { mutateAsync: signInAccount } = useSignInAccount();
+
+  //Handler
 
   async function onSubmit(values: z.infer<typeof SignupValidation>) {
     const newUser = await createUserAccount(values);

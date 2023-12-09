@@ -1,10 +1,6 @@
 import { ID, Query } from "appwrite"
 import { appwriteConfig, account, databases, storage, avatars } from "@/lib/appwrite/config";
-import { IUpdatePost, INewPost, INewUser, IUpdateUser } from "@/types";
-
-
-console.log("ac",appwriteConfig);
-// AUTH
+import { IUpdatePost, INewPost, INewUser, IUpdateUser } from "@/types/index";
 
 // ==== SIGN UP
 export async function createUserAccount(user: INewUser) {
