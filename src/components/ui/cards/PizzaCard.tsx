@@ -3,14 +3,14 @@ import PostStats from "../shared/PostStats";
 import { IUser } from "@/types";
 import { Models } from "appwrite";
 
-interface Props {
-	showUser: boolean;
+export interface PizzaCardProps {
+	showUser?: boolean;
 	showStats: boolean;
 	user: IUser;
 	post: Models.Document;
 }
 
-const PizzaCard = ({ showUser, showStats, post, user }: Props) => {
+const PizzaCard = ({ post, showUser, showStats, user }: PizzaCardProps) => {
 	return (
 		<div>
 			<Link to={`/posts/${post.$id}`} className='grid-post_link'>
@@ -24,13 +24,16 @@ const PizzaCard = ({ showUser, showStats, post, user }: Props) => {
 			<div className='grid-post_user'>
 				{showUser && (
 					<div className='flex items-center justify-start gap-2 flex-1'>
-						<img
-							src={
-								post.creator.imageUrl || "/assets/icons/profile-placeholder.svg"
-							}
-							alt='creator'
-							className='w-8 h-8 rounded-full'
-						/>
+						{post.creator.imageUrl && (
+							<img
+								src={
+									post.creator.imageUrl ||
+									"/assets/icons/profile-placeholder.svg"
+								}
+								alt='creator'
+								className='w-8 h-8 rounded-full'
+							/>
+						)}
 						<p className='line-clamp-1'>{post.creator.name}</p>
 					</div>
 				)}

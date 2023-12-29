@@ -4,8 +4,8 @@ import PizzaCard from "../cards/PizzaCard";
 
 type GridPostListProps = {
 	posts: Models.Document[];
-	showUser?: boolean;
-	showStats?: boolean;
+	// showUser?: boolean;
+	// showStats?: boolean;
 };
 
 const GridPostList = ({
@@ -19,7 +19,7 @@ const GridPostList = ({
 		<ul className='grid-container'>
 			{posts.map((post) => (
 				<li key={post.$id} className='relative min-w-80 h-80'>
-					<PizzaCard showUser showStats user={user} post={post} />
+					<PizzaCard user={user} post={post} showUser showStats />
 				</li>
 			))}
 		</ul>
