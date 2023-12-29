@@ -4,8 +4,8 @@ import PizzaCard from "../cards/PizzaCard";
 
 type GridPostListProps = {
 	posts: Models.Document[];
-	// showUser?: boolean;
-	// showStats?: boolean;
+	 //showUser?: boolean;
+	 //showStats?: boolean;
 };
 
 const GridPostList = ({
