@@ -1,3 +1,5 @@
+[![RepoRater](https://repo-rater.eddiehub.io/api/badge?owner=jasonetorres&name=pizzapics)](https://repo-rater.eddiehub.io/rate?owner=jasonetorres&name=pizzapics)
+
 ## PizzaPix: A Social Hub for Pizza Enthusiasts 
 Let's build PizzaPix together – one slice at a time! 🍕🚀
 Welcome to PizzaPix, your go-to social media app for pizza lovers! This README serves as your guide to understanding the project, its technologies, and how you can contribute to making PizzaPix even better.
