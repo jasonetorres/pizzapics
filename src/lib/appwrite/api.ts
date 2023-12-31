@@ -45,8 +45,8 @@ export async function saveUserToDB(user: {
       appwriteConfig.databaseId,
       appwriteConfig.userCollectionId,
       ID.unique(),
-      user
-    );
+      user    
+      );
 
     return newUser;
   } catch (error) {
@@ -80,7 +80,6 @@ export async function getAccount() {
 export async function getCurrentUser() {
   try {
     const currentAccount = await getAccount();
-
     if (!currentAccount) throw Error;
 
     const currentUser = await databases.listDocuments(
@@ -130,7 +129,7 @@ export async function createPost(post: INewPost) {
 
     // Convert tags into array
     const tags = post.tags?.replace(/ /g, "").split(",") || [];
-
+    
     // Create post
     const newPost = await databases.createDocument(
       appwriteConfig.databaseId,
@@ -140,7 +139,7 @@ export async function createPost(post: INewPost) {
         creator: post.userId,
         caption: post.caption,
         imageUrl: fileUrl,
-        imageId: uploadedFile.$id,
+        imageID: uploadedFile.$id,
         location: post.location,
         tags: tags,
       }
@@ -221,7 +220,7 @@ export async function searchPosts(searchTerm: string) {
 }
 
 export async function getInfinitePosts({ pageParam }: { pageParam: number }) {
-  const queries: any[] = [Query.orderDesc("$updatedAt"), Query.limit(9)];
+  const queries = [Query.orderDesc("$updatedAt"), Query.limit(9)];
 
   if (pageParam) {
     queries.push(Query.cursorAfter(pageParam.toString()));
@@ -445,7 +444,7 @@ export async function getRecentPosts() {
 
 // ==== GET USERS
 export async function getUsers(limit?: number) {
-  const queries: any[] = [Query.orderDesc("$createdAt")];
+  const queries = [Query.orderDesc("$createdAt")];
 
   if (limit) {
     queries.push(Query.limit(limit));
