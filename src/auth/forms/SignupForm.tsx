@@ -14,10 +14,12 @@ import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { SignupValidation } from "@/lib/validation";
 import Loader from "@/components/ui/shared/Loader";
-import { useToast } from "@/components/ui/use-toast"
-import { useCreateUserAccount, useSignInAccount } from "@/lib/react-query/queriesAndMutations";
+import { useToast } from "@/components/ui/use-toast";
+import {
+  useCreateUserAccount,
+  useSignInAccount,
+} from "@/lib/react-query/queriesAndMutations";
 import { useUserContext } from "@/context/AuthContext";
-
 
 const SignupForm = () => {
   const { toast } = useToast();
@@ -34,37 +36,40 @@ const SignupForm = () => {
     },
   });
 
-
-  const { mutateAsync: createUserAccount, isPending: isCreatingAccount } = useCreateUserAccount();
+  const { mutateAsync: createUserAccount, isPending: isCreatingAccount } =
+    useCreateUserAccount();
   const { mutateAsync: signInAccount } = useSignInAccount();
 
   //Handler
 
   async function onSubmit(values: z.infer<typeof SignupValidation>) {
     const newUser = await createUserAccount(values);
-    if(!newUser){
-      return toast({ title: 'it was you not us, try again'})
+    if (!newUser) {
+      return toast({ title: "it was you not us, try again" });
     }
     const session = await signInAccount({
       email: values.email,
       password: values.password,
-    })
-    if(!session){
-      return toast({ title: 'FAAAAIL, try again'})
+    });
+    if (!session) {
+      return toast({ title: "FAAAAIL, try again" });
     }
     const isLoggedIn = await checkAuthUser();
-    if(isLoggedIn) {
+    if (isLoggedIn) {
       form.reset();
-      navigate()
+      navigate();
     } else {
-      return toast({ title: 'FAAAAIL try again'})
+      return toast({ title: "FAAAAIL try again" });
     }
   }
 
   return (
     <Form {...form}>
       <div className=" sm:w-420 flex-center flex-col">
-      <img className="w-16 rounded-half " src="/assets/images/logopizza.JPG" />
+        <img
+          className="w-16 rounded-half "
+          src="/assets/images/logopizza.JPG"
+        />
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">Create New Account</h2>
         <p className=" text-light-3 small-medium md:base-regular mt-2">
           To use PizzaPix enter your account deets
