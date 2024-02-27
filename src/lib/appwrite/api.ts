@@ -66,10 +66,13 @@ export async function signInAccount(user: { email: string; password: string }) {
 }
 
 // ======GET ACCOUNT
-export async function getAccount() {
+/**
+ * Retrieves the current account information.
+ * @returns {Promise<any>} The current account information.
+ */
+export async function getAccount(): Promise<unknown> {
   try {
     const currentAccount = await account.get();
-
     return currentAccount;
   } catch (error) {
     console.log(error);
