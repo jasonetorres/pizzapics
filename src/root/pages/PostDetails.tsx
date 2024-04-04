@@ -39,7 +39,7 @@ const PostDetails = () => {
       ) : (
         <div className='post_details-card'>
           <img
-            src={post?.imageURL}
+            src={post?.imageUrl}
             alt='creator'
             className='post_details-img'
           />
