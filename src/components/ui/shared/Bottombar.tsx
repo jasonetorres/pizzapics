@@ -6,7 +6,7 @@ const Bottombar = () => {
   const { pathname } = useLocation();
 
   return (
-    <section className="bottom-bar fixed flex w-full justify-around items-center h-20 bottom-0 md:hidden border-t">
+    <section className="bottom-bar fixed flex w-full justify-around items-center h-20 bottom-0 md:hidden border-t bg-slate-50">
       {bottombarLinks.map((link) => {
         const isActive = pathname === link.route;
         return (
