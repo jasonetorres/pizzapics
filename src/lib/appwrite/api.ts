@@ -10,7 +10,10 @@ export async function createUserAccount(user: INewUser) {
       user.email,
       user.password,
       user.name
-    );
+    ) as {
+      email: string;
+      name: string; $id: string
+};
 
     if (!newAccount) throw Error;
 
@@ -83,12 +86,13 @@ export async function getAccount(): Promise<unknown> {
 export async function getCurrentUser() {
   try {
     const currentAccount = await getAccount();
+
     if (!currentAccount) throw Error;
 
     const currentUser = await databases.listDocuments(
       appwriteConfig.databaseId,
       appwriteConfig.userCollectionId,
-      [Query.equal("accountID", currentAccount.$id)]
+      [Query.equal("accountId", currentAccount.$id)]
     );
 
     if (!currentUser) throw Error;

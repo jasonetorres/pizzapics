@@ -3,8 +3,10 @@ import PostStats, {
 	type PostStatsProps,
 } from "../../components/ui/shared/PostStats";
 import users from "../mocks/users.json";
-import currentUser from "../mocks/currentUser.json";
-import * as OriginalQueriesAndMutations from "@/lib/react-query/queriesAndMutations";
+//import { CurrentUser } from "../mocks/currentUser.json";
+//import * as OriginalQueriesAndMutations from "@/lib/react-query/queriesAndMutations";
+
+//const currentUser: CurrentUser = { ... };
 
 const meta = {
 	title: "Shared/PostStats",
