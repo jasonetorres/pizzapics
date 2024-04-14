@@ -65,7 +65,7 @@ const PostCard = ({ post }: PostCardProps) => {
           src={post.imageUrl || "/assets/icons/profle-placeholder.svg"}
           alt="post image"
           className="post-card_img"
-          style={{ objectFit: "contain", width: "auto", height: "auto", maxHeight: "800px"}}
+          style={{ objectFit: "cover", width: "100%", height: "auto", maxHeight: "800px"}}
         />
       </Link>
 
