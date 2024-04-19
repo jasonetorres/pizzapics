@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import PostStats from "../shared/PostStats";
 import { IUser } from "@/types";
 import { Models } from "appwrite";
+import { FileView } from "@/lib/appwrite/api";
 
 export interface PizzaCardProps {
 	showUser?: boolean;
@@ -15,7 +16,7 @@ const PizzaCard = ({ post, showUser, showStats, user }: PizzaCardProps) => {
 		<div>
 			<Link to={`/posts/${post.$id}`} className='grid-post_link'>
 				<img
-					src={post.imageUrl}
+					src={FileView(post.imageId)}
 					alt='post'
 					className='h-full w-full object-cover'
 				/>
